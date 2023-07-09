@@ -24,3 +24,29 @@ class dataEnd:
         buffer = open(FILE, 'rb')
         response = pickle.load(buffer)
         self.res = response
+
+def backend(url):
+    state = nm.isUp(url)
+    if state > 199 and state < 300:
+        if exists(FILE):
+            m = dataEnd(url)
+            m.serve()
+            return m.res
+        else:
+            m = dataEnd(url)
+            m.cache()
+            return m.res
+
+    else:
+        if exists(FILE):
+            m = dataEnd(url)
+            m.serve()
+            return m.res
+
+@app.route("/cache", methods=['GET'])
+def _server_side():
+    site = request.args.get("site")
+    return site
+
+app.run(port=8888, debug=False)
+print(backend("http://127.0.0.1:8888/cache?site=lol"))
