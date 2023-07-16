@@ -1,0 +1,49 @@
+<style>
+.nyasshu{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: #FDD;
+  color: #404;
+  padding: 5px;
+  padding-right: 0px;
+  font-family: monospace, sans-serif;
+}
+.nyasshu::after{
+  position: relative;
+  content: 'v1.0';
+  background-color: #404;
+  color: #FDD;
+  right: 0px;
+  padding: 5px;
+}
+
+.nyabarsshu{
+  position: absolute;
+  bottom: 5px;
+  left: 140px;
+  padding: 5px;
+  background-color: #FDD;
+  color: #404;
+}
+
+.nyabarsshu::after{
+  position: relative;
+  background-color: #404;
+  color: #FDD;
+  content: '{{ bar }}';
+  right: -5px;
+  padding: 5px;
+}
+
+</style>
+
+<div class="nyasshu">
+  Nyasshu
+</div>
+
+<div class="nyabarsshu">
+  status 
+</div>
+
+{{ content|safe }}
