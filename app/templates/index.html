@@ -24,9 +24,30 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.nyasshu{
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  background-color: #FDD;
+  color: #404;
+  padding: 5px;
+  padding-right: 0px;
+  font-family: monospace, sans-serif;
+}
+.nyasshu::after{
+  position: relative;
+  content: 'v1.0';
+  background-color: #404;
+  color: #FDD;
+  right: 0px;
+  padding: 5px;
+}
+
 </style>
 
-<center><p><font size="6px" color="#AA4400" style="font-family: monospace;">Nyashhu v1.0</font></p></center>
+<div class="nyasshu">
+  Nyasshu
+</div>
 
 <div class="fdiv">
 
